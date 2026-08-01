@@ -1,0 +1,29 @@
+generated: '2026-07-20'
+method: searched
+source: https://app.rapidcanvas.ai/.well-known/oauth-authorization-server
+docs: https://app.rapidcanvas.ai/.well-known/oauth-authorization-server
+schemes:
+  - name: OAuth2
+    source: well-known/rapidcanvas-oauth-authorization-server.json
+    flows:
+      - flow: authorizationCode
+        authorizationUrl: https://app.rapidcanvas.ai/oauth/authorize
+        tokenUrl: https://app.rapidcanvas.ai/oauth/token
+        pkce: S256
+scopes:
+  - scope: mcp
+    description: Access the RapidCanvas MCP gateway and invoke FastAPI-derived MCP tools.
+    flows: [authorizationCode]
+  - scope: openid
+    description: OpenID Connect authentication (issue an ID token).
+    flows: [authorizationCode]
+  - scope: profile
+    description: Access the signed-in user's basic profile.
+    flows: [authorizationCode]
+  - scope: email
+    description: Access the signed-in user's email address.
+    flows: [authorizationCode]
+notes: >-
+  Scopes are advertised in the RFC 8414 OAuth 2.0 Authorization Server Metadata
+  at app.rapidcanvas.ai. The `mcp` scope fronts the MCP gateway introduced in the
+  July 14, 2026 release (FastAPI endpoints exposed as MCP tools).

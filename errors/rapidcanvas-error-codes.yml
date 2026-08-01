@@ -1,0 +1,32 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.rapidcanvas.ai/advanced/rc-cli/14-error-reference.md
+scope: RC CLI (rc) error reference
+envelope: >-
+  The rc CLI surfaces platform API errors by printing the API's error message and
+  a resolution hint; deterministic local checks (rc scan) exit 1 on CRITICAL/HIGH.
+errors:
+  - message: "Switch to a different workspace? [y/N]: Aborted."
+    source: rc init -y
+    cause: --workspace-id was not provided; -y does not skip the workspace prompt.
+    resolution: Pass --workspace-id <uuid> explicitly.
+  - message: "The name '<n>' should be at least 3 characters and at most 64 characters."
+    source: rc add dataapp
+    cause: DataApp name is shorter than 3 characters.
+    resolution: Use a longer name.
+  - message: "A DataApp named '<name>' already exists."
+    source: rc add dataapp
+    cause: Another DataApp in the same project already uses that name.
+    resolution: Choose a different name, or pass --platform-name <alias>.
+  - message: "Invalid FastAPI service name: 'bad name'"
+    source: rc add fastapi
+    cause: Disallowed character (whitespace or symbol) in the service name.
+    resolution: Use only allowed characters (letters, digits, hyphens/underscores).
+  - message: GitHub token validation failed
+    source: rc init --git / --repo-url
+    cause: The platform's configured GitHub token cannot access the target repo.
+    resolution: Fix the token in Profile Settings on the platform (GET /user-settings/github-token/validate).
+notes: >-
+  RapidCanvas does not publish a public HTTP problem-types / RFC 9457 catalog for
+  the underlying REST API (no public OpenAPI reference). The documented, machine-
+  readable error surface is the RC CLI error reference captured above.

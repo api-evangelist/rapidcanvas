@@ -1,7 +1,30 @@
 aid: rapidcanvas
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/rapidcanvas.png
 name: RapidCanvas
-description: RapidCanvas is a company surfaced as a portfolio company of accel and added to the API Evangelist
-  network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  RapidCanvas is an enterprise agentic-AI platform that helps organizations build,
+  deploy, govern, and operate AI agents integrated with existing business systems.
+  Its "Hybrid Approach" pairs the platform with vertical experts and data
+  scientists, taking companies from use-case discovery (a 2-day expert-led
+  workshop) to production AI. Developers work through a graphical Canvas of
+  projects, recipes, DataApps, and scheduled pipelines, plus a Python SDK and the
+  Typer-based `rc` CLI that scaffolds and deploys FastAPI services and React
+  DataApps to the platform. Programmatic access is via a bearer-token REST API at
+  app.rapidcanvas.ai/api, with an OAuth 2.0 + PKCE surface and an MCP gateway that
+  exposes FastAPI endpoints as MCP tools. RapidCanvas serves financial services,
+  manufacturing, retail & CPG, healthcare, energy, real estate, and supply chain.
 url: https://raw.githubusercontent.com/api-evangelist/rapidcanvas/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -9,17 +32,92 @@ x-backed-by:
 - accel
 x-tier: stub
 x-tier-reason: portfolio-lead
+x-enrichment:
+  date: '2026-07-20'
+  status: enriched
+  artifacts_added: 12
+  pass: local-v1
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
 tags:
 - Company
-apis: []
+- Artificial Intelligence
+- Machine Learning
+- Agentic AI
+- Data Science
+- MLOps
+- Enterprise AI
+- AI Governance
+- Low Code
+- Developer Tools
+apis:
+- name: RapidCanvas Platform API
+  description: >-
+    Bearer-token REST API behind the RapidCanvas platform and the RC CLI. All CLI
+    interactions are HTTPS calls to https://<host>/api/... No public OpenAPI
+    reference is published; the OAuth authorization-server metadata and the CLI
+    docs describe the auth surface.
+  humanURL: https://docs.rapidcanvas.ai/
+  baseURL: https://app.rapidcanvas.ai/api/
+  tags:
+  - Artificial Intelligence
+  - Machine Learning
+  - Developer Tools
+  properties:
+  - type: Documentation
+    url: https://docs.rapidcanvas.ai/
+  - type: Authentication
+    url: authentication/rapidcanvas-authentication.yml
+  - type: OAuthScopes
+    url: scopes/rapidcanvas-scopes.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/rapidcanvas-domain-security.yml
 - type: Website
   url: https://www.rapidcanvas.ai/
+- type: Documentation
+  url: https://docs.rapidcanvas.ai/
+- type: GettingStarted
+  url: https://docs.rapidcanvas.ai/getting-started/quick-start-guide
+- type: Pricing
+  url: https://www.rapidcanvas.ai/pricing
+- type: Blog
+  url: https://www.rapidcanvas.ai/blogs
+- type: BlogRSS
+  url: https://www.rapidcanvas.ai/blogs/rss.xml
+- type: SignUp
+  url: https://app.rapidcanvas.ai/
+- type: Support
+  url: https://www.rapidcanvas.ai/contact
+- type: TermsOfService
+  url: https://www.rapidcanvas.ai/terms-of-service
+- type: PrivacyPolicy
+  url: https://www.rapidcanvas.ai/privacy-policy
+- type: TrustCenter
+  url: https://trustcenter.rapidcanvas.ai/
+- type: ChangeLog
+  url: changelog/rapidcanvas-changelog.yml
+- type: LLMsTxt
+  url: llms/rapidcanvas-llms.txt
+- type: WellKnown
+  url: well-known/rapidcanvas-well-known.yml
+- type: Authentication
+  url: authentication/rapidcanvas-authentication.yml
+- type: OAuthScopes
+  url: scopes/rapidcanvas-scopes.yml
+- type: CLI
+  url: cli/rapidcanvas-cli.yml
+- type: ErrorCatalog
+  url: errors/rapidcanvas-error-codes.yml
+- type: Conventions
+  url: conventions/rapidcanvas-conventions.yml
+- type: Lifecycle
+  url: lifecycle/rapidcanvas-lifecycle.yml
+- type: TrustCenter
+  url: security/rapidcanvas-trust-center.yml

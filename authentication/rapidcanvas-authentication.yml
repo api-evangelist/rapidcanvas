@@ -1,0 +1,34 @@
+generated: '2026-07-20'
+method: searched
+source: https://app.rapidcanvas.ai/.well-known/oauth-authorization-server
+docs: https://docs.rapidcanvas.ai/advanced/rc-cli/03-authentication.md
+summary:
+  types: [oauth2, http]
+  http_schemes: [bearer]
+  oauth2_flows: [authorizationCode]
+  pkce: S256
+  api_base: https://app.rapidcanvas.ai/api/
+schemes:
+  - name: OAuth2
+    type: oauth2
+    flows:
+      - flow: authorizationCode
+        authorizationUrl: https://app.rapidcanvas.ai/oauth/authorize
+        tokenUrl: https://app.rapidcanvas.ai/oauth/token
+        registrationUrl: https://app.rapidcanvas.ai/oauth/register
+        pkce: S256
+        scopes: [mcp, openid, profile, email]
+    source: well-known/rapidcanvas-oauth-authorization-server.json
+  - name: bearerAuth
+    type: http
+    scheme: bearer
+    description: >-
+      Platform REST API calls to https://app.rapidcanvas.ai/api/ carry a bearer
+      token. The RC CLI obtains it via `rc login` (browser SSO or --token) and
+      stores it per host x workspace in ~/.rc/credentials.
+    source: https://docs.rapidcanvas.ai/advanced/rc-cli/03-authentication.md
+notes: >-
+  End-user access to the platform is via email/password or SSO sign-in at
+  app.rapidcanvas.ai (sign-up is invitation-based). Programmatic access uses a
+  bearer token scoped to a workspace (tenant). The RFC 8414 metadata advertises
+  authorization_code + refresh_token grants with PKCE for the MCP/OAuth surface.

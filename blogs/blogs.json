@@ -1,0 +1,21 @@
+{
+  "repo": "rapidcanvas",
+  "feeds": [
+    {
+      "source": "https://www.rapidcanvas.ai/pricing",
+      "feed_url": "https://www.rapidcanvas.ai/pricing",
+      "title": "",
+      "saved": 0,
+      "method": "none"
+    },
+    {
+      "source": "https://www.rapidcanvas.ai/blogs",
+      "feed_url": "https://www.rapidcanvas.ai/blogs/rss.xml",
+      "title": "",
+      "saved": 2,
+      "method": "discovered"
+    }
+  ],
+  "post_count": 2,
+  "fetched": "2026-07-25T15:00:33Z"
+}

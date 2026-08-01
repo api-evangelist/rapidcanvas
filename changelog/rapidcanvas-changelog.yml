@@ -1,0 +1,39 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.rapidcanvas.ai/additional-reading/release-notes.md
+scheme: dated-release-notes
+cadence: roughly every 4-6 weeks
+current: '2026-07-14'
+docs: https://docs.rapidcanvas.ai/additional-reading/release-notes.md
+entries:
+  - date: '2026-07-14'
+    url: https://docs.rapidcanvas.ai/additional-reading/release-notes/july-14-2026.md
+    breaking: false
+    highlights:
+      - MCP Server support for FastAPI — expose selected FastAPI endpoints as MCP tools (Claude/ChatGPT/Copilot/Codex/Gemini) via an MCP gateway, gated by a Quality Gate on the MCP contract.
+      - PostHog monitoring for DataApps (UI toggle) and Sentry monitoring for FastAPI servers.
+  - date: '2026-06-13'
+    url: https://docs.rapidcanvas.ai/additional-reading/release-notes/june-13-2026.md
+    breaking: false
+    highlights:
+      - New user experience (UX).
+      - Scheduler alerts & enhanced Slack monitoring.
+      - Self sign-up for workspace access.
+      - FastAPI deployment improvements; AskAI API simplification.
+  - date: '2026-05-09'
+    url: https://docs.rapidcanvas.ai/additional-reading/release-notes/may-09-2026.md
+    breaking: false
+    highlights:
+      - Code-to-Canvas (local DAG development & sync).
+      - Edit non-git projects in VS Code; simplified user roles.
+      - External sharing of projects & DataApps.
+  - date: '2026-04-02'
+    url: https://docs.rapidcanvas.ai/additional-reading/release-notes/april-02-2026.md
+    breaking: false
+    highlights:
+      - Audit logs for DataApps and environments.
+      - Deployment modes for FastAPI servers.
+      - Read-only sample projects; global search filter for FastAPI servers.
+notes: >-
+  RapidCanvas publishes dated release notes going back to 2023. Only the recent
+  window is captured here; the live index at the docs URL is the source of truth.

@@ -1,0 +1,14 @@
+generated: '2026-07-20'
+method: searched
+source: https://www.rapidcanvas.ai/llms.txt
+url: https://trustcenter.rapidcanvas.ai/
+certifications: []
+detail: >-
+  RapidCanvas publishes a Trust Center at trustcenter.rapidcanvas.ai, linked from
+  the marketing site as "Security and compliance posture". The page is a
+  JavaScript-rendered app (returns HTTP 403 to non-browser clients), so named
+  certifications could not be extracted programmatically and are left empty
+  rather than guessed. Confirm SOC 2 / ISO 27001 / etc. from the live page.
+evidence:
+  - source: https://www.rapidcanvas.ai/llms.txt
+    keywords: [trust center, security and compliance posture]

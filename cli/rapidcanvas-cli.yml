@@ -1,0 +1,72 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.rapidcanvas.ai/advanced/rc-cli/01-overview.md
+name: rc
+description: >-
+  Typer-based CLI that scaffolds, develops, and deploys components to the
+  RapidCanvas platform. All platform interactions are HTTPS calls to
+  https://<host>/api/... The CLI manages FastAPI services, React DataApps, and
+  Canvas pipelines.
+install:
+  method: rc-cli-setup skill
+  note: >-
+    Installed/updated via the documented `/rc-cli-setup` flow rather than a
+    public package registry; `rc --version` prints the installed version.
+  registry: null
+verify:
+  - which rc
+  - rc --help
+  - rc --version
+local_state:
+  - path: ~/.rc/credentials
+    purpose: Saved bearer tokens, one per host x tenant (workspace).
+  - path: ~/.rc/config
+    purpose: Pointer to the most recently active project (active_project).
+  - path: rc.yaml
+    purpose: Per-project local representation of platform components.
+auth:
+  login: rc login          # browser SSO by default; --token for non-interactive; --no-browser to paste a token
+  logout: rc logout        # clears stored credentials; --host/--workspace-id to scope; --all
+  hosts: [app, qa, test, ks]
+canonical_workflow:
+  - rc login
+  - rc init <path>
+  - rc add fastapi <name>
+  - rc add dataapp <name>
+  - rc preview <name>
+  - rc scan <name>
+  - rc deploy <name>
+commands:
+  - group: login/logout
+    commands: [login, logout]
+  - group: workspace
+    commands: [workspace list, workspace current, workspace switch]
+  - group: project
+    commands: [init, list, sync, export]
+  - group: add/deploy/preview
+    commands: [add fastapi, add dataapp, deploy, preview, scan]
+  - group: environments
+    commands: [env add, env default, compute]
+    docs: https://docs.rapidcanvas.ai/advanced/rc-cli/07-commands-environments.md
+  - group: pipeline
+    commands: [dag, pipeline]
+    docs: https://docs.rapidcanvas.ai/advanced/rc-cli/08-commands-pipeline.md
+  - group: compute
+    commands: [compute]
+    docs: https://docs.rapidcanvas.ai/advanced/rc-cli/09-commands-compute.md
+  - group: vars
+    commands: [vars]
+    docs: https://docs.rapidcanvas.ai/advanced/rc-cli/10-commands-vars.md
+manages:
+  - type: FastAPI service
+    published_at: https://<host>/fastapiapps/<project_id>/<name>/
+  - type: React DataApp
+    published_at: https://<host>/dataapps/<slug>/
+  - type: Canvas pipeline
+    defined_in: canvas/dag.yaml
+docs:
+  overview: https://docs.rapidcanvas.ai/advanced/rc-cli/01-overview.md
+  installation: https://docs.rapidcanvas.ai/advanced/rc-cli/02-installation.md
+  authentication: https://docs.rapidcanvas.ai/advanced/rc-cli/03-authentication.md
+  commands_core: https://docs.rapidcanvas.ai/advanced/rc-cli/06-commands-core.md
+  error_reference: https://docs.rapidcanvas.ai/advanced/rc-cli/14-error-reference.md

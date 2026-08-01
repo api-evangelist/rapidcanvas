@@ -1,0 +1,24 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.rapidcanvas.ai/additional-reading/release-notes.md
+versioning:
+  scheme: dated-release-notes
+  current: '2026-07-14'
+  docs: https://docs.rapidcanvas.ai/additional-reading/release-notes.md
+deprecation:
+  policy_url: null
+  sunset_header: unknown
+  detail: No formal deprecation policy or RFC 8594 Sunset/Deprecation header support documented.
+sla:
+  url: null
+  uptime_target: null
+status_page:
+  url: null
+  detail: >-
+    No public status page found (status.rapidcanvas.ai does not resolve;
+    rapidcanvas.statuspage.io redirects to Atlassian marketing, not a live page).
+release_notes: https://docs.rapidcanvas.ai/additional-reading/release-notes.md
+deprecated_operations: []
+notes: >-
+  Lifecycle signal is the dated release-notes stream (2023-present). No status
+  page, SLA document, or formal deprecation policy is published.

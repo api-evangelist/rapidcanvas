@@ -1,0 +1,46 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.rapidcanvas.ai/advanced/rc-cli/01-overview.md
+authentication:
+  style: bearer token (OAuth2 authorization_code + PKCE for the OAuth/MCP surface)
+  api_base: https://app.rapidcanvas.ai/api/
+  token_storage: ~/.rc/credentials (per host x workspace)
+  see: authentication/rapidcanvas-authentication.yml
+tenancy:
+  model: workspace (a.k.a. tenant)
+  detail: >-
+    Every credential is keyed by host x workspace. A user can belong to multiple
+    workspaces; `rc workspace switch` swaps between cached tokens, while
+    `rc login --workspace-id <uuid>` calls the platform POST /switch on the
+    current token.
+hosts:
+  transport: HTTPS only; all platform interactions are calls to https://<host>/api/...
+  aliases:
+    app: https://app.rapidcanvas.ai
+    qa: https://qa.dev.rapidcanvas.net
+    test: staging/test deployments
+    ks: alternate deployment
+  self_hosted: supported (rc login --host https://rc.internal.<company>.com)
+versioning:
+  scheme: dated release notes (no public API version path documented)
+  see: changelog/rapidcanvas-changelog.yml
+error_envelope:
+  detail: >-
+    The CLI prints the platform API's error message plus a resolution hint. No
+    public RFC 9457 problem+json catalog is published.
+  see: errors/rapidcanvas-error-codes.yml
+idempotency:
+  supported: false
+  detail: No documented idempotency-key header/parameter on the platform API.
+pagination:
+  supported: unknown
+  detail: No public API reference documents pagination conventions.
+mcp:
+  detail: >-
+    FastAPI endpoints can be exposed as MCP tools through the platform MCP
+    gateway (July 14, 2026 release); the `mcp` OAuth scope fronts that gateway.
+notes: >-
+  Derived from the RC CLI documentation and the OAuth authorization-server
+  metadata. RapidCanvas is an SDK/CLI-driven platform; it does not publish a
+  public REST API reference or OpenAPI, so several cross-cutting conventions
+  (pagination, request-id tracing, rate-limit signaling) are not documented.
