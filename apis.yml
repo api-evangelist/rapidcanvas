@@ -43,6 +43,17 @@ modified: '2026-07-20'
 tags:
 - Company
 - Artificial Intelligence
+- Machine-Learning
+- Agentic AI
+- Data Science
+- MLOps
+- Enterprise AI
+- AI Governance
+- Low-Code
+- Developer Tools
+tags_raw:
+- Company
+- Artificial Intelligence
 - Machine Learning
 - Agentic AI
 - Data Science
@@ -61,6 +72,10 @@ apis:
   humanURL: https://docs.rapidcanvas.ai/
   baseURL: https://app.rapidcanvas.ai/api/
   tags:
+  - Artificial Intelligence
+  - Machine-Learning
+  - Developer Tools
+  tags_raw:
   - Artificial Intelligence
   - Machine Learning
   - Developer Tools
