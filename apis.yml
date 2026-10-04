@@ -54,8 +54,8 @@ modified: '2026-07-20'
 tags:
 - Company
 - Artificial Intelligence
-- Machine-Learning
-- Agentic AI
+- Machine Learning
+- AI Agents
 - Data Science
 - MLOps
 - Enterprise AI
@@ -73,6 +73,7 @@ tags_raw:
 - AI Governance
 - Low Code
 - Developer Tools
+- Machine-Learning
 apis:
 - name: RapidCanvas Platform API
   description: >-
@@ -84,12 +85,13 @@ apis:
   baseURL: https://app.rapidcanvas.ai/api/
   tags:
   - Artificial Intelligence
-  - Machine-Learning
+  - Machine Learning
   - Developer Tools
   tags_raw:
   - Artificial Intelligence
   - Machine Learning
   - Developer Tools
+  - Machine-Learning
   properties:
   - type: Documentation
     url: https://docs.rapidcanvas.ai/
