@@ -105,6 +105,8 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: Plans
+  url: plans/rapidcanvas-plans-pricing.yml
 - type: DomainSecurity
   url: security/rapidcanvas-domain-security.yml
 - type: Website
